@@ -1,0 +1,97 @@
+commands:
+  - name: ping
+    id: 0x00
+        
+    request_parameters:
+      - name: increment
+        type: uint8
+        is_a_list: false
+    
+    response_parameters:
+      - name: count
+        type: uint8
+        is_a_list: false
+
+  - name: get_input_codes
+    id: 0x01
+    
+    request_parameters:
+    - name: dummy
+      type: uint8
+      is_a_list: false
+
+    response_parameters:
+    - name: input_0_code
+      type: int16
+      is_a_list: false
+
+    - name: input_1_code
+      type: int16
+      is_a_list: false
+
+    - name: input_2_code
+      type: int16
+      is_a_list: false
+
+    - name: input_3_code
+      type: int16
+      is_a_list: false
+
+  - name: read_calibration_table_entry
+    id: 0x02
+    
+    request_parameters:
+    - name: channel
+      type: uint8
+      is_a_list: false
+
+    - name: index
+      type: uint16_t
+      is_a_list: false
+    
+    response_parameters:
+    - name: code
+      type: int16
+      is_a_list: false
+      
+    - name: voltage
+      type: int32
+      is_a_list: false
+
+  - name: write_calibration_table_entry
+    id: 0x03
+    
+    request_parameters:
+    - name: channel
+      type: uint8
+      is_a_list: false
+
+    - name: index
+      type: uint16
+      is_a_list: false
+    
+    - name: code
+      type: int16
+      is_a_list: false
+      
+    - name: voltage
+      type: int32
+      is_a_list: false
+    
+    response_parameters:
+    - name: dummy
+      type: uint8
+      is_a_list: false
+
+  - name: get_input_voltage
+    id: 0x04
+    
+    request_parameters:
+    - name: channel
+      type: uint8
+      is_a_list: false
+    
+    response_parameters:
+    - name: voltage
+      type: int32
+      is_a_list: false
